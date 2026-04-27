@@ -1,0 +1,45 @@
+type Time = int;
+type Product = 
+ record {
+   description: text;
+   name: text;
+   nutritionalInfo: text;
+   packaging: text;
+   sizes: vec text;
+ };
+type Enquiry = 
+ record {
+   companyName: text;
+   contactPerson: text;
+   country: text;
+   products: vec text;
+   quantity: text;
+   shippingPreference: text;
+   timestamp: Time;
+ };
+type Contact = 
+ record {
+   email: text;
+   message: text;
+   name: text;
+   timestamp: Time;
+ };
+service : {
+  addProduct: (name: text, description: text, sizes: vec text, packaging:
+   text, nutritionalInfo: text) -> ();
+  getAllContacts: () -> (vec Contact) query;
+  getAllEnquiries: () -> (vec Enquiry) query;
+  getCompanyInfo: () ->
+   (record {
+      brands: vec text;
+      businessType: text;
+      exportMarkets: vec text;
+      keywords: vec text;
+      location: text;
+      name: text;
+    }) query;
+  getProducts: () -> (vec Product) query;
+  submitContact: (name: text, email: text, message: text) -> ();
+  submitEnquiry: (companyName: text, contactPerson: text, country: text,
+   products: vec text, quantity: text, shippingPreference: text) -> ();
+}

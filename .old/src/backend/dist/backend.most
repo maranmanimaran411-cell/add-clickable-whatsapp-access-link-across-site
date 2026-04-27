@@ -1,0 +1,59 @@
+// Version: 1.0.0
+type Contact__891480783 =
+  {email : Text; message : Text; name : Text; timestamp : Time__900049286};
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type Enquiry__415520819 =
+  {
+    companyName : Text;
+    contactPerson : Text;
+    country : Text;
+    products : [Text];
+    quantity : Text;
+    shippingPreference : Text;
+    timestamp : Time__900049286
+  };
+type Int__270357528 = Int__616954475;
+type Int__616954475 = Int;
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+type Product__853085059 =
+  {
+    description : Text;
+    name : Text;
+    nutritionalInfo : Text;
+    packaging : Text;
+    sizes : [Text]
+  };
+type Time__796480547 = Int__270357528;
+type Time__900049286 = Time__796480547;
+actor {
+  stable contactData :
+    {
+      var root : Node__46230540<Time__900049286, Contact__891480783>;
+      var size : Nat__490723111
+    };
+  stable enquiryData :
+    {
+      var root : Node__46230540<Time__900049286, Enquiry__415520819>;
+      var size : Nat__490723111
+    };
+  stable productData :
+    {
+      var root : Node__46230540<Text, Product__853085059>;
+      var size : Nat__490723111
+    };
+  stable products :
+    [{
+       description : Text;
+       name : Text;
+       nutritionalInfo : Text;
+       packaging : Text;
+       sizes : [Text]
+     }]
+};

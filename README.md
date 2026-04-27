@@ -1,2 +1,3 @@
-# add-clickable-whatsapp-access-link-across-site
-Exported from Caffeine project: Add clickable WhatsApp access link across site
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+
+    /* Warm, professional color scheme for food manufacturing */
+    /* Primary: Warm orange-brown (representing traditional Indian spices) */
+    --background: 0.99 0 0;
+    --foreground: 0.2 0.015 30;
+    --card: 1 0 0;
+    --card-foreground: 0.2 0.015 30;
+    --popover: 1 0 0;
+    --popover-foreground: 0.2 0.015 30;
+
+    /* Brand colors - warm terracotta/spice tones */
+    --primary: 0.55 0.15 35;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.95 0.02 50;
+    --secondary-foreground: 0.25 0.02 30;
+
+    --muted: 0.96 0.01 50;
+    --muted-foreground: 0.5 0.01 30;
+
+    --accent: 0.94 0.03 45;
+    --accent-foreground: 0.25 0.02 30;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.9 0.01 40;
+    --input: 0.9 0.01 40;
+    --ring: 0.55 0.15 35;
+
+    /* Brand-specific colors */
+    --brand-primary: 0.55 0.15 35;
+    --brand-dark: 0.35 0.12 30;
+    --brand-medium: 0.65 0.12 40;
+    --brand-light: 0.85 0.08 45;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+  }
+
+  .dark {
+    --background: 0.18 0.015 30;
+    --foreground: 0.98 0.005 50;
+    --card: 0.22 0.015 30;
+    --card-foreground: 0.98 0.005 50;
+    --popover: 0.2 0.015 30;
+    --popover-foreground: 0.98 0.005 50;
+
+    --primary: 0.7 0.12 40;
+    --primary-foreground: 0.15 0.015 30;
+
+    --secondary: 0.28 0.02 35;
+    --secondary-foreground: 0.98 0.005 50;
+
+    --muted: 0.3 0.02 35;
+    --muted-foreground: 0.7 0.01 40;
+
+    --accent: 0.35 0.03 38;
+    --accent-foreground: 0.98 0.005 50;
+
+    --destructive: 0.6 0.2 25;
+    --destructive-foreground: 0.98 0.005 50;
+
+    --border: 0.3 0.02 35;
+    --input: 0.3 0.02 35;
+    --ring: 0.7 0.12 40;
+
+    --brand-primary: 0.7 0.12 40;
+    --brand-dark: 0.25 0.1 32;
+    --brand-medium: 0.6 0.1 38;
+    --brand-light: 0.8 0.08 42;
+
+    --chart-1: 0.488 0.243 264.376;
+    --chart-2: 0.696 0.17 162.48;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+}
+
+/* Custom brand utilities */
+@layer utilities {
+  .text-brand-primary {
+    color: oklch(var(--brand-primary));
+  }
+
+  .text-brand-dark {
+    color: oklch(var(--brand-dark));
+  }
+
+  .text-brand-medium {
+    color: oklch(var(--brand-medium));
+  }
+
+  .text-brand-light {
+    color: oklch(var(--brand-light));
+  }
+
+  .bg-brand-primary {
+    background-color: oklch(var(--brand-primary));
+  }
+
+  .bg-brand-dark {
+    background-color: oklch(var(--brand-dark));
+  }
+
+  .bg-brand-medium {
+    background-color: oklch(var(--brand-medium));
+  }
+
+  .bg-brand-light {
+    background-color: oklch(var(--brand-light));
+  }
+
+  .border-brand-primary {
+    border-color: oklch(var(--brand-primary));
+  }
+}
